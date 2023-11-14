@@ -1,0 +1,7 @@
+{
+  "name": "soundBox",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
