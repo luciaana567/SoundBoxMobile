@@ -1,0 +1,109 @@
+
+
+.header{
+  --background: none;
+  margin-bottom: -20%;
+  text-align: center;
+  --color: #FFFF;
+}
+
+.toolbar{
+  --background: none;
+}
+
+.buttom {
+  margin-top: 10%;
+}
+.title{
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: -15%;
+}
+
+.subtitle{
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 14px;
+  margin-left: -15%;
+  margin-top: 2%;
+}
+
+ion-content#body {
+  --background: rgba(35, 35, 59,0.9) url("../../assets/images/lines.png") no-repeat;
+}
+
+ion-card.card_music{
+   width: 100%;
+   height: 70%;
+   margin-top: 22%;
+   margin-left: -0.5%;
+  --background: none;
+  box-shadow: none;
+  --color:#FFFF;
+}
+img.img_music{
+  width: 100%;
+  height: 70%;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.title_music{
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 25px;
+  margin-top: 5%;
+  margin-bottom: -5%;
+}
+.subtitle_music{
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 18px;
+  // text-align: center;
+  // margin-top: 1%;
+}
+
+.progress_music{
+  margin-inline: 2%;
+}
+
+.rangePlaytime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttoms{
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 1%;
+}
+
+ion-icon {
+  color:#FFFF;
+}
+
+ion-icon.heart-icon{
+  font-size: 38px;
+  margin-right: 15%;
+}
+
+ion-icon.icon{
+  margin-inline: 2%;
+  font-size: 40px;
+}
+
+ion-icon.remove-icon{
+  font-size: 38px;
+  margin-left: 15%;
+}

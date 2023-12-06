@@ -1,0 +1,49 @@
+ion-content {
+  --background: rgba(35, 35, 59,0.9) url("../../assets/images/lines.png") no-repeat;
+}
+
+.logo{
+  margin-top: 40%;
+}
+
+form.form{
+  // margin-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+
+ion-list.form-list.md.list-md.hydrated{
+  background: none;
+}
+
+ion-item.input{
+  --background: none;
+
+  --color: #9340FF;
+  --highlight-color-invalid: #fff;
+  --highlight-color-invalid: #FF3C5F;
+  --highlight-color-valid: rgba(97, 250, 149, 1);
+}
+
+ion-input.custom {
+  --background: none;
+  --color: #9340FF;
+}
+
+.forget-password{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #9340FF;
+}
+
+.div-button{
+ margin-top: 10%;
+}
+
+ion-button{
+ --border-radius: 40px;
+ --background: #9340FF;
+ --color: rgba(35, 35, 59,0.9);
+  font-weight: 600;
+}

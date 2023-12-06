@@ -1,17 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <h1>CONHEÇA NOVAS MÚSICAS</h1>
+  <p>Escolha abaixo o tipo e a vibe da música que quer escutar e deixa que a gente vai te surpreender.</p>
+  <ion-row>
+    <div *ngFor="let style of styleList" class="buttons">
+      <!-- <p> {{style.name}}</p> -->
+      <ion-button style ="--background:rgba(23, 23, 37, 0.5)" *ngIf="style.touched === false" (click)="addToSearch(style)" [id]="style.id">{{style.name}}</ion-button>
+      <ion-button style="--background:rgba(147, 64, 255, 0.9)" *ngIf="style.touched === true" (click)="removeListSearch(style)" >{{style.name}}</ion-button>
+    </div>
+  </ion-row>
+  <div class="div-button" fxLayout="column" fxLayoutAlign="space-between center" style="text-align: center;" fxLayoutGap="30px">
+    <ion-button expand="block" size="large" class="buttonStyle" id="one" type="submit" (click)="sendList()">COMEÇAR</ion-button>
+  </div>
 </ion-content>

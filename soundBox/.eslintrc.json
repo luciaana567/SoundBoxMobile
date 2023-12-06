@@ -40,7 +40,13 @@
     {
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
+      "rule": {
+        //Essa regra requer que qualquer expressão booleana seja limitada a booleanos verdadeiros, em vez
+        //de converter outra primitiva em um booleano em tempo de execução
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        //Desabilita a regra a que restringe a utilização dos métodos Interfaces e Types simultaneamente
+        //em um mesmo projeto.
+        "@typescript-eslint/consistent-type-definitions": "off"}
     }
   ]
 }

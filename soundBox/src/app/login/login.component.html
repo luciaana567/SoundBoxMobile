@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true">
+  <div class ="logo" fxLayout="column" fxLayoutAlign="space-between center" style="text-align: center;" fxLayoutGap="30px">
+    <img src="../../assets/images/logo-total.png" alt="logo com nome soundBox">
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="logForm()" class="form">
+    <ion-list class="form-list" fxLayout="column" fxLayoutAlign="space-between center" style="text-align: center;" fxLayoutGap="30px">
+      <ion-item class="input">
+        <ion-label class="label" position="floating">Email</ion-label>
+        <ion-input  class="custom" name="email" id="email" required="true" type="text" formControlName="email" fill="solid"></ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <ion-label class="label" position="floating">Senha</ion-label>
+        <ion-input class="custom"  id="password" name= "password" [type]="showPassword ? 'text' : 'password'" formControlName="password" required="true"></ion-input>
+        <ion-icon name="eye-off" slot="end" class="ion-align-self-end" *ngIf="showPassword === false" (click)="changeShowPassword()" ></ion-icon>
+        <ion-icon name="eye" slot="end" class="ion-align-self-end" *ngIf="showPassword === true" (click)="changeShowPassword()"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <div class="div-button" fxLayout="column" fxLayoutAlign="space-between center" style="text-align: center;" fxLayoutGap="30px">
+      <ion-button expand="block" size="large" class="buttonStyle" id="one" type="submit">ACESSAR</ion-button>
+      <ion-button expand="block" size="large" class="buttonStyle" id="two" (click)="register()">CADASTRE-SE</ion-button>
+    </div>
+
+    <div class="forget-password" fxLayout="column" fxLayoutAlign="space-between center" style="text-align: center;" fxLayoutGap="30px">
+      <span class="span">Esqueceu a senha?</span>
+    </div>
+  </form>
+
+</ion-content>

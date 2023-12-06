@@ -1,0 +1,54 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar  class="header">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()" icon="chevron-down-outline" class="buttom"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">TOCANDO DO ALBUM</ion-title>
+    <ion-title class="subtitle">{{music.albumName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="body">
+  <ion-card class="card_music">
+    <ion-card-header>
+      <img [src]="music.urlImgMusic" class="img_music"/>
+      <h1 class="title_music">{{music.name}}</h1>
+      <h2 class="subtitle_music">{{music.artistName}}</h2>
+    </ion-card-header>
+    <ion-content>
+      <!-- <div class="progress_music">
+        <audio controls [src]="music.urlTrack"> </audio>
+        <ion-range min="0" max="{{duration}}" [(ngModel)]="position">
+           [disabled]="is_in_play && is_playing"
+           <ion-label slot="start">{{ position*1000 | date:'mm:ss' }}</ion-label>
+          <ion-label slot="end" *ngIf="duration === -1">--:--</ion-label>
+          <ion-label slot="end" *ngIf="duration !== -1">{{ duration*1000 | date:'mm:ss' }}</ion-label>
+        </ion-range>
+
+      </div> -->
+
+      <div class="progress_music">
+        <!-- <div class="fixedContent">
+        </div> -->
+        <ion-range min="0" max="{{duration}}" [(ngModel)]="position" color="light">
+        </ion-range>
+        <div class="rangePlaytime">
+          <ion-label class="startTime" color="light">{{ display_position }}</ion-label>
+          <ion-label class="endTime" color="light" *ngIf="duration === -1">--:--</ion-label>
+          <ion-label class="endTime" color="light" *ngIf="duration !== -1">{{ display_duration }}</ion-label>
+        </div>
+      </div>
+
+      <div class="buttoms">
+        <ion-icon name="heart-outline" class="heart-icon" *ngIf="music.inPlaylist === false" (click)="addToPlaylist()"></ion-icon>
+        <ion-icon name="heart" class="heart-icon"  *ngIf="music.inPlaylist === true" (click)="deleteMusicPlaylist()"></ion-icon>
+        <ion-icon name="play-back-outline" class="icon"></ion-icon>
+        <ion-icon name="caret-forward-circle" *ngIf="!getState()" (click)="play()" class="icon"></ion-icon>
+        <ion-icon name="pause-circle-sharp" *ngIf="getState()" (click)="pause()" class="icon"></ion-icon>
+        <ion-icon name="play-forward-outline" class="icon" (click)="nextSong(music)"></ion-icon>
+        <ion-icon name="remove-circle-outline"class="remove-icon"> </ion-icon>
+      </div>
+    </ion-content>
+
+  </ion-card>
+</ion-content>

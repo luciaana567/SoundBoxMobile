@@ -1,0 +1,51 @@
+// body
+
+ion-content {
+  --background: rgba(35, 35, 59,0.9) url("../../assets/images/lines.png") no-repeat;
+}
+
+ion-content h1{
+  margin-left: 5%;
+  margin-top: 10%;
+  color: #FFF;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+Ion-content p{
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #FFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+ion-row{
+  margin: 5%;
+}
+
+// ion-button{
+//   --background:rgba(23, 23, 37, 0.5);
+// }
+
+.touched{
+  --background:rgba(147, 64, 255, 0.9);
+}
+
+ion-buttom.no-touched{
+  --background:rgba(23, 23, 37, 0.5);
+}
+
+.div-button{
+  margin: 5%;
+ }
+
+ .div-button ion-button{
+  --border-radius: 40px;
+  --background: #9340FF;
+  --color: rgba(35, 35, 59,0.9);
+   font-weight: 600;
+ }

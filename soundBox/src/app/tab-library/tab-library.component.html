@@ -1,3 +1,49 @@
-<p>
-  tab-library works!
-</p>
+<ion-header  class="ion-no-border">
+  <ion-toolbar class="header">
+    <h1>Biblioteca</h1>
+    <a><ion-img src="../../assets/icon/logo (2).svg"></ion-img></a>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <div class="listagem" *ngIf="list.length > 0">
+    <ion-list >
+      <div  *ngFor="let music of list">
+      <ion-item *ngIf="music.inPlaylist === true">
+          <ion-card class="card_music" (click)="navigateToMusic(music.id)" >
+            <img [src]="music.urlImgMusic" class="img_music"/>
+            <ion-card-header>
+              <ion-card-title class="music_title">{{ music.name }}</ion-card-title>
+              <ion-card-subtitle class="artist_subtitle">{{ music.artistName }}</ion-card-subtitle>
+              <ion-icon name="heart" class="heart-icon-outline" (click)="delete(music.id)"></ion-icon>
+            </ion-card-header>
+          </ion-card>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+  <div class="listagem" *ngIf="list.length === 0">
+    <ion-list >
+      <ion-list-header>
+        <ion-skeleton-text [animated]="true" style="width: 80px; color:#fff"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item *ngFor="let item of falseList">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

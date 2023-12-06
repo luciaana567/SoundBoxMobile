@@ -1,13 +1,12 @@
-<div class="body">
-  <img src="../../assets/images/lines.png"/>
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">Tab 1</ion-title>
-      </ion-toolbar>
-    </ion-header>
+<ion-header  class="ion-no-border">
+  <ion-toolbar class="header">
+    <a><ion-img src="../../assets/icon/logo (2).svg"></ion-img></a>
+  </ion-toolbar>
+</ion-header>
 
-    <app-explore-container name="Tab 1 page"></app-explore-container>
-  </ion-content>
-</div>
+<ion-content [fullscreen]="true" >
+  <app-listagem-horizontal [listMusicOne]="listOne" [listMusicTwo]="listTwo" [listMusicThree]="listThree"></app-listagem-horizontal>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>
+
 

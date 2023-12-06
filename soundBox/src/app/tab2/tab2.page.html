@@ -1,17 +1,57 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+<ion-header  class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-searchbar animated="true"  [debounce]="500" (ionInput)="search($event)" placeholder="Pesquise música ou artistas" show-clear-button="focus"> </ion-searchbar>
+    <!-- <a><ion-img src="../../assets/icon/logo (2).svg"></ion-img></a> -->
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" >
+  <div class="listagem" *ngIf="list.length > 0">
+    <ion-list >
+      <ion-item *ngFor="let music of list">
+        <ion-card class="card_music" >
+          <img [src]="music.urlImgMusic" class="img_music" (click)="navigateToMusic(music.id)"/>
+          <ion-card-header (click)="navigateToMusic(music.id)">
+            <ion-card-title class="music_title">{{ music.name }}</ion-card-title>
+            <ion-card-subtitle class="artist_subtitle">{{ music.artistName }}</ion-card-subtitle>
+          </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+        </ion-card>
+        <div class="icons">
+          <ion-icon name="heart-outline" class="heart-icon" *ngIf="music.inPlaylist === false" (click)="addToPlaylist(music)"></ion-icon>
+          <ion-icon name="heart" class="heart-icon"  *ngIf="music.inPlaylist === true" (click)="deleteMusicPlaylist(music)"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="listagem" *ngIf="lookingNow===true">
+    <ion-list >
+      <ion-list-header>
+        <ion-skeleton-text [animated]="true" style="width: 80px; color:#fff"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item *ngFor="let item of falseList">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="listagem-vazia" *ngIf="list.length === 0 && nullList === true">
+    <ion-icon name="search-outline" class="search-icon"></ion-icon>
+    <h1>{{ resposeToNullList }}</h1>
+    <p>Tente usar palavras-chave diferentes</p>
+  </div>
+
 </ion-content>
+

@@ -6,6 +6,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { TabLibraryComponent } from './tab-library.component';
 import { TabLibraryPageRoutingModule } from './tab-library-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from 'app/security/interceptor/interceptor.module';
 
 @NgModule({
   imports: [
@@ -16,5 +18,8 @@ import { TabLibraryPageRoutingModule } from './tab-library-routing.module';
     TabLibraryPageRoutingModule,
   ],
   declarations: [TabLibraryComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
 })
 export class TabLibraryPageModule {}

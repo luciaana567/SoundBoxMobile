@@ -1,0 +1,45 @@
+
+<div class="listagem" *ngIf=" listMusicOne !== undefined && listMusicOne.length > 0">
+  <h1>Para Você</h1>
+  <swiper-container slides-per-view="2" space-between="28">
+    <swiper-slide *ngFor="let music of listMusicOne">
+      <ion-card class="card_music" (click)="navigateToMusic(music.id)">
+        <img [src]="music.urlImgMusic" class="img_music"/>
+        <ion-card-header>
+          <ion-card-title class="music_title">{{ music.name }}</ion-card-title>
+          <ion-card-subtitle class="artist_subtitle">{{ music.artistName }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</div>
+
+<div class="listagem" *ngIf="listMusicTwo !== undefined && listMusicTwo.length > 0">
+  <h1>Ouvir novamente</h1>
+  <swiper-container slides-per-view="2" space-between="28">
+    <swiper-slide *ngFor="let music of listMusicTwo">
+      <ion-card class="card_music" (click)="navigateToMusic(music.id)">
+        <img [src]="music.urlImgMusic" class="img_music"/>
+        <ion-card-header>
+          <ion-card-title class="music_title">{{ music.name }}</ion-card-title>
+          <ion-card-subtitle class="artist_subtitle">{{ music.artistName }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</div>
+
+<div class="listagem" *ngIf="listMusicThree !== undefined && listMusicThree.length > 0">
+  <h1>Escolhas rápidas</h1>
+  <swiper-container slides-per-view="2" space-between="28">
+    <swiper-slide *ngFor="let music of listMusicThree">
+      <ion-card class="card_music" (click)="navigateToMusic(music.id)">
+        <img [src]="music.urlImgMusic" class="img_music"/>
+        <ion-card-header>
+          <ion-card-title class="music_title">{{ music.name }}</ion-card-title>
+          <ion-card-subtitle class="artist_subtitle">{{ music.artistName }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</div>

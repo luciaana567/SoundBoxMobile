@@ -1,0 +1,87 @@
+// header
+.header{
+  // --background: none;
+  margin-bottom: -10%;
+}
+ion-img{
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-right: 2%;
+  margin-top: -13%;
+}
+
+
+ion-header  h1{
+  margin-left: 5%;
+  color: #FFF;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+// body
+
+ion-content {
+  --background: rgba(35, 35, 59,0.9) url("../../assets/images/lines.png") no-repeat;
+
+}
+div.listagem {
+  color: #FFF;
+  font-family: Noto Sans;
+  --background:none;
+  margin-top: 10%;
+}
+
+ion-list{
+
+  background:none;
+}
+ion-item{
+  margin-bottom: -2%;
+  width: 110%;
+  margin-left: -5%;
+  --background:none;
+}
+
+ion-card.card_music{
+  --color: #FFFF;
+  border-radius: 5px;
+  background-color: rgba(147, 64, 255, 0.1);
+}
+
+ion-card-title.music_title {
+  --color: #FFFF;
+   margin-top: -19%;
+  margin-left: 22%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ion-card-subtitle {
+  margin-left: 22%;
+  --color: #FFFF;
+}
+
+img.img_music{
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: -7%;
+  width: 20%;
+  height: 20%;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+ion-icon{
+  margin-top: -9%;
+  margin-left: 90%;
+  font-size: 38px;
+  color:#FFFF;
+}
+
+ion-skeleton-text{
+  --background: rgba(rgb(255, 255, 255));
+  --background-rgb: 188, 0, 255;
+}
